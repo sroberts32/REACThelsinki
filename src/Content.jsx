@@ -1,28 +1,28 @@
 
-import Part from "./Part";
-
-const part1 = {
+const parts = [
+{
       name:'Fundamentals of React ',
       exercises: 10,
-}
+},
 
-const part2 = {
+{
       name:'Using props to pass data ',
       exercises: 7,
-}
+},
 
-const part3 = {
+{
       name:'State of a component ',
       exercises: 14,
 }
+]
 
 
 function Content(props) {
     return (
 		<div>
-            <Part part = {part1.name} exercise = {part1.exercises} />
-            <Part part = {part2.name} exercise = {part2.exercises} />
-            <Part part = {part3.name} exercise = {part3.exercises} />
+            <p> {parts.name[0]} {parts.exercise[0]} </p>
+            <p> {parts.name[1]} {parts.exercises[1]} </p>
+            <p> {parts.name[2]} {parts.exercises[2]} </p>
 		</div>
 	);
 }
