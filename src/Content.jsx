@@ -18,13 +18,15 @@ const parts = [
 
 
 function Content(props) {
-    return (
-		<div>
-            <p> {parts.name[0]} {parts.exercise[0]} </p>
-            <p> {parts.name[1]} {parts.exercises[1]} </p>
-            <p> {parts.name[2]} {parts.exercises[2]} </p>
-		</div>
-	);
-}
+	let arr = props.parts.map(function(item) {
+		return (
+			<div>
+				<p> {item.name}: {item.exercises}</p>
+			</div>
+		)
+	})
+	
+	return arr
+};
 
 export default Content;
