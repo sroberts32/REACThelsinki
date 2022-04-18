@@ -36,7 +36,7 @@ const Header = (props) => {
 };
 
 const Content = (props) => {
-	const lists = props.parts.map(function(item) {
+	const arr = props.parts.map(function(item) {
 		return (
 			<div>
 				<p> {item.name}: {item.exercises}</p>
@@ -44,13 +44,13 @@ const Content = (props) => {
 		)
 	})
 	
-	return lists
+	return arr
 };
 
 const Total = (props) => {
 	var score = 0
 	
-	const lists = props.parts.map(function(item) {
+	const arr = props.parts.map(function(item) {
 		
 		score = score + item.exercises 
 		
