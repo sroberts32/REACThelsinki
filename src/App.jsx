@@ -1,45 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
 const App = () => {
-	const course = 'Half Stack application development'
-	const parts = [
-		{
-		  name: 'Fundamentals of React',
-		  exercises: 10
-		},
-		{
-		  name: 'Using props to pass data',
-		  exercises: 7
-		},
-		{
-		  name: 'State of a component',
-		  exercises: 14
-		}
-	]
+	const course = {
+		name: 'Half Stack application development',
+		parts: [
+			{
+				name: 'Fundamentals of React',
+				exercises: 10
+			},
+			{
+				name: 'Using props to pass data',
+				exercises: 7
+			},
+			{
+				name: 'State of a component',
+				exercises: 14
+			}
+		]
+	}
 
 	return (
 		<div>
-			<Header course={course} />
-			<Content parts={parts} />
-			<Total parts={parts} />
-		</div>
-	)
-};
-
-const Header = (props) => {
-	return (
-		<div>
-			<h1>{props.course}</h1>
+			<h1>{course.name}</h1>
+			<Content course={course} />
+			<Total course={course} />
 		</div>
 	)
 };
 
 const Content = (props) => {
-	const arr = props.parts.map(function(item) {
+	const arr = props.course.parts.map(function(item) {
 		return (
 			<div>
-				<p> {item.name}: {item.exercises}</p>
+				<p>{item.name}: {item.exercises}</p>
 			</div>
 		)
 	})
@@ -50,17 +44,17 @@ const Content = (props) => {
 const Total = (props) => {
 	var score = 0
 	
-	const arr = props.parts.map(function(item) {
+	const arr = props.course.parts.map(function(item) {
 		
-		score = score + item.exercises 
+		score = score + item.exercises
 		
+		return score
 	})
 	
 	return (
 		<div>
-			<p>Number of exercises: {score} </p>
+			<p>Number of exercises: {score}</p>
 		</div>
 	)
 };
-
 export default App;
